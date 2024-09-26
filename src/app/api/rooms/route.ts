@@ -1,5 +1,5 @@
 import { DB, readDB, writeDB } from "@lib/DB";
-import { Database,Payload } from "@lib/DB";
+import { Payload,Database,} from "@lib/DB";
 import { checkToken } from "@lib/checkToken";
 import { nanoid } from "nanoid";
 import { NextRequest, NextResponse } from "next/server";
@@ -68,8 +68,8 @@ export const POST = async (request: NextRequest) => {
   const roomId = nanoid();
 
   (<Database>DB).rooms.push({
-    roomId,
-    roomName,
+
+    roomId, roomName,
   });
 
   writeDB();
